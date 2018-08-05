@@ -34,6 +34,11 @@ ARG username=docker
 
 MAINTAINER oleks <oleks@oleks.info>
 
+RUN \
+  apt-get update && \
+  apt-get upgrade -y && \
+  rm -rf /var/lib/apk/lists/*
+
 RUN useradd -m -u 1000 ${username}
 WORKDIR /home/${username}/
 
