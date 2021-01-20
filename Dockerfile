@@ -1,4 +1,4 @@
-# Copyright 2017-2018 Oleks <oleks@oleks.info>
+# Copyright 2017-2021 Oleks <oleks@oleks.info>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -28,7 +28,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-FROM debian:9.5
+FROM debian:10.7
 
 ARG username=docker
 
@@ -37,7 +37,7 @@ MAINTAINER oleks <oleks@oleks.info>
 RUN \
   apt-get update && \
   apt-get upgrade -y && \
-  rm -rf /var/lib/apk/lists/*
+  rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -u 1000 ${username}
 WORKDIR /home/${username}/

@@ -1,6 +1,6 @@
 # A Makefile for easier Dockerfile testing
 #
-# Copyright 2017 Oleks <oleks@oleks.info>
+# Copyright 2017-2021 Oleks <oleks@oleks.info>
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions
@@ -33,7 +33,7 @@
 .PHONY: build interact
 
 name:=$(shell basename $(CURDIR))
-version:=0.1
+version:=10.7_01
 tag:=$(name):v$(version)
 
 build: Dockerfile Makefile
