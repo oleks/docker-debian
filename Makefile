@@ -47,5 +47,7 @@ interact: build Dockerfile Makefile
 	  $(tag)
 
 push: build Dockerfile Makefile
+	docker tag $(tag) $(name):latest
 	docker push \
 	  $(tag)
+	docker push $(name):latest
