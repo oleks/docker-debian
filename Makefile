@@ -30,7 +30,7 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 
-.PHONY: build interact
+.PHONY: build interact push
 
 name:=portoleks/debian
 version:=12.9_01
@@ -44,4 +44,8 @@ build: Dockerfile Makefile
 interact: build Dockerfile Makefile
 	docker run \
 	  --interactive --tty --rm \
+	  $(tag)
+
+push: build Dockerfile Makefile
+	docker push \
 	  $(tag)
