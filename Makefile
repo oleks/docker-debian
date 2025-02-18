@@ -32,7 +32,7 @@
 
 .PHONY: build interact
 
-name:=$(shell basename $(CURDIR))
+name:=portoleks/debian
 version:=12.9_01
 tag:=$(name):v$(version)
 
